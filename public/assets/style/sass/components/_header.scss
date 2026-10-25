@@ -1,0 +1,377 @@
+//  header
+
+header {
+  padding: 30px 0;
+  position: fixed;
+  background-color: transparent;
+  z-index: 20;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  transition: all ease-in-out 0.2s;
+}
+
+
+// .fixed-header {
+//   padding: 10px 0;
+//   .logo img {
+//     width: 55px;
+//   }
+
+// }
+
+.fixed-header {
+  padding: 10px 0;
+  .logo img {
+    width: 100px;
+  }
+  .logo .logo-light {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .logo-dark {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.open-nav {
+  inset-inline-start: 0;
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  justify-content: flex-end;
+  a {
+    width: 60px;
+    height: 37px;
+    background-color: rgba($color: #fff, $alpha: 0.102);
+    display: flex;
+    border-radius: 19px;
+    align-items: center;
+    justify-content: center;
+    transition: background-color ease-in-out 0.2s;
+
+    &:hover {
+      background-color: $main-hover;
+    }
+    .icon {
+      color: #fff;
+      transition: color linear 0.2s;
+    }
+    .google {
+      font-size: 21px;
+    }
+    .apple {
+      font-size: 26px;
+    }
+  }
+}
+
+
+// html[dir="ltr"] {
+//   .blur-header {
+//     .header-links a {
+//       background-color: $main-color;
+//       &:hover {
+//         background-color: $main-hover;
+//       }
+//     }
+//   }
+
+// }
+
+
+// html[dir="ltr"]{
+//    .blur-header .header-links {
+//   .change-bg {
+//     background-color: $main-hover;
+//   }
+// }
+
+// }
+//   .header-links {
+//   .change-bg {
+//     background-color: $main-hover;
+//   }
+// }
+
+.links-bars-holder,
+.logo {
+  width: 13.5%;
+  display: flex;
+}
+
+.links-bars-holder {
+  justify-content: flex-end;
+}
+
+@include max-1200 {
+  .links-bars-holder,
+  .logo {
+    width: 16.145%;
+  }
+}
+
+.blur-header {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 20px 0px;
+  backdrop-filter: saturate(180%) blur(7px);
+  background-color: rgba($color: #fff, $alpha: 0.9);
+  padding: 15px 0;
+
+  .logo .logo-light {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .big-menu li a {
+    color: $main-color;
+  }
+
+  .logo-dark {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .header-links a {
+    background-color: $main-color;
+    &:hover{
+      background-color: $main-hover;
+    }
+  }
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  position: relative;
+  img {
+    width: 125px;
+    transition: all linear 0.3s;
+  }
+  .logo-light {
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.big-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  column-gap: 25px;
+  li:last-child {
+    margin-inline-end: 0;
+  }
+  li {
+    a {
+      font-size: 14px;
+      color: #fff;
+      font-weight: 400;
+      text-transform: capitalize;
+      transition: all linear 0.2s;
+      &:hover {
+        color: #55aaa6;
+      }
+    }
+  }
+}
+
+@include min-992 {
+  .big-menu li a.active {
+    color: #55aaa6;
+  }
+  .openBtn {
+    display: none;
+  }
+}
+
+@include max-1200 {
+  .big-menu {
+    column-gap: 20px;
+  }
+}
+
+@include max-992 {
+  .links-bars-holder,
+  .logo {
+    width: auto;
+  }
+  .big-menu li a {
+    font-size: 18px;
+  }
+  .call-opennav-div {
+    display: flex;
+    align-items: center;
+  }
+  .big-menu li {
+    margin-inline-end: 17px;
+  }
+  .header-content {
+    flex-wrap: wrap;
+  }
+
+  .openBtn {
+    display: flex;
+    align-items: center;
+    i {
+      color: #fff;
+      font-size: 24px;
+    }
+  }
+
+  .links-bars-holder {
+    display: flex;
+    gap: 20px;
+  }
+
+  .big-menu li:last-child {
+    margin-bottom: 0;
+  }
+  .navigation {
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: $main-color;
+    z-index: -1;
+    padding: 20px;
+    padding-top: 28px;
+  }
+  .big-menu {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    width: 100%;
+    row-gap: 20px;
+  }
+  .big-menu li {
+    margin-inline-end: 0;
+    text-align: start;
+    opacity: 0;
+  }
+}
+
+
+
+// .header-mob {
+//   // .openBtn i {
+//   //   color: #fff;
+//   // }
+//   // .logo .logo-light {
+//   //   opacity: 0;
+//   //   visibility: hidden;
+//   // }
+//   // .logo .logo-dark {
+//   //   opacity: 1;
+//   //   visibility: visible;
+//   // }
+//   // .header-links a {
+//   //   background-color: rgba(255, 255, 255, 0.102);
+//   //   &:hover {
+//   //     background-color: #46a351;
+//   //     .icon {
+//   //       color: #fff;
+//   //     }
+//   //   }
+//   // }
+//   // .big-menu li a {
+//   //   color: #fff;
+//   //   &:hover {
+//   //     color: #cedd42;
+//   //   }
+//   // }
+// }
+
+.big-menu li:first-of-type {
+  transition: all 0.2s ease-in-out;
+}
+
+.big-menu li:nth-of-type(2) {
+  transition: all 0.4s ease-in-out;
+}
+
+.big-menu li:nth-of-type(3) {
+  transition: all 0.6s ease-in-out;
+}
+
+.big-menu li:nth-of-type(4) {
+  transition: all 0.8s ease-in-out;
+}
+
+.big-menu li:nth-of-type(5) {
+  transition: all 1s ease-in-out;
+}
+
+.big-menu li:nth-of-type(6) {
+  transition: all 1.2s ease-in-out;
+}
+.big-menu li:nth-of-type(7) {
+  transition: all 1.4s ease-in-out;
+}
+
+@include max-768 {
+  .blur-header .big-menu li a {
+    color: #fff;
+  }
+  header {
+    padding: 15px 0;
+  }
+  .header-links a {
+    width: 65px;
+    height: 35px;
+  }
+  .header-links a .google {
+    font-size: 19px;
+  }
+  .header-links a .apple {
+    font-size: 24px;
+  }
+  .logo img {
+    width: 90px;
+  }
+  .blur-header {
+    .openBtn i {
+      color: $main-color;
+    }
+    .openBtn {
+      .bars-white {
+        color: #fff;
+      }
+    }
+
+    .logo .show-logo-dark {
+      opacity: 1;
+      visibility: visible;
+    }
+   .logo .hide-logo-light{
+      opacity: 0;
+      visibility: hidden;
+    }
+    .header-links a{
+      background-color: $main-color;
+    }
+  }
+  .blur-header .header-links a.change-bg{
+    background-color: rgba($color: #fff, $alpha: 0.102);
+  }
+}

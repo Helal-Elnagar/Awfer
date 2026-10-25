@@ -1,0 +1,52 @@
+// Media Query
+@mixin max-500 {
+  @media only screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin max-768 {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin max-992 {
+  @media only screen and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin max-1200 {
+  @media only screen and (max-width: 1199px) {
+    @content;
+  }
+}
+@mixin max-1300 {
+  @media only screen and (max-width: 1299px) {
+    @content;
+  }
+}
+
+@mixin min-576 {
+  @media only screen and (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin min-768 {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin min-992 {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+@mixin min-1200 {
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}

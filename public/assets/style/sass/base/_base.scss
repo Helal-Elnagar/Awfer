@@ -1,0 +1,245 @@
+// variables
+
+$main-color: #2d3456;
+$main-hover: #55aaa6;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Tajawal";
+}
+
+.sub-title {
+  font-size: 22px;
+  color: $main-color;
+  font-weight: 400;
+  text-align: center;
+}
+.general-title {
+  font-size: 34px;
+  color: #000;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.mySwiper-parent {
+  position: relative;
+}
+.titles-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a,
+button {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0;
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $main-color;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f2f2f2;
+}
+
+.readmore-holder {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.read-more {
+  font-size: 15px;
+  text-decoration: underline;
+  color: #808080;
+
+  text-transform: capitalize;
+  &:hover {
+    color: $main-color;
+    text-decoration: underline;
+  }
+}
+
+// bread crump
+
+.breadcrumb-sec {
+  padding: 25px 0;
+  margin-top: 130px;
+}
+
+.item-home::after {
+  content: " / ";
+  padding: 0;
+  color: #808080;
+  padding-inline-start: 3px;
+  padding-inline-end: 8px;
+}
+.breadcrumb {
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.bread-link {
+  transition: all linear 0.2s;
+  &:hover {
+    color: $main-color;
+  }
+}
+
+ol.breadcrumb li a,
+ol.breadcrumb li span {
+  transition: all 0.2s linear;
+  text-transform: capitalize;
+  font-size: 14px;
+  color: #808080;
+  text-decoration: none;
+}
+
+//end of  bread crump
+
+// Start Preloader
+
+.preloader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.preloader {
+  width: 100%;
+  height: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+  background-image: linear-gradient(to bottom, #f5f5f5, #f9f9f9);
+  position: relative;
+  overflow: hidden;
+}
+
+.preloader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 90%;
+  height: 100%;
+  background-color: $main-color;
+  animation: preloaderAnimation 3s infinite linear;
+}
+
+@keyframes preloaderAnimation {
+  100% {
+    left: 100%;
+  }
+}
+
+// End Preloader
+
+// back-up
+.toTop {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 7.5px rgba(0, 0, 0, 0.15));
+  background-color: #ffffff;
+  display: flex;
+  right: 20px;
+  bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  transition: all linear 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  z-index: 10;
+  &:hover {
+    background-color: $main-color;
+    .toTop-icon {
+      color: #fff;
+    }
+  }
+  .toTop-icon {
+    font-size: 14px;
+    color: #333;
+    transition: all linear 0.2s;
+  }
+}
+
+.showToTop {
+  opacity: 1;
+  visibility: visible;
+}
+
+@include min-1200 {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+@include max-992 {
+  .general-title {
+    font-size: 28px;
+    line-height: 1.7;
+  }
+}
+
+@include max-768 {
+  .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .sub-title {
+    font-size: 20px;
+  }
+  .general-title {
+    font-size: 21px;
+    line-height: 1.5;
+  }
+  .toTop {
+    right: 10px;
+    bottom: 10px;
+  }
+  .preloader::before {
+    animation-duration: 2s;
+  }
+  .readmore-holder {
+    margin-top: 25px;
+  }
+}

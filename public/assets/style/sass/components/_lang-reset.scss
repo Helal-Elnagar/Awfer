@@ -1,0 +1,122 @@
+html[dir="ltr"] {
+  .ques-answer {
+    line-height: 1.7;
+  }
+
+  .features-parent {
+    justify-content: flex-start;
+  }
+  .about .item {
+    width: 275px;
+  }
+
+  .about .para {
+    line-height: 1.5;
+  }
+  .about .items {
+    column-gap: 8px;
+  }
+  .download-parent .content .para {
+    line-height: 1.4;
+  }
+  .features .general-title,
+  .list-item .item-title,
+  .client-reviews .general-title {
+    line-height: 1.3;
+  }
+
+  .banner-desc .second-title {
+    line-height: 1.2;
+  }
+  .banner-desc .main-title {
+    line-height: 1.2;
+  }
+
+  .ques-text {
+    line-height: 1.35;
+  }
+  .client-reviews .item .quote-text,
+  .about .item .desc {
+    line-height: 1.5;
+  }
+  @media screen and (max-width: 1700px) {
+    .hero-mobile {
+      left: 12%;
+    }
+  }
+  @media screen and (max-width: 1400px) {
+    .hero-mobile {
+      width: 460px;
+      left: 10%;
+    }
+  }
+
+  @include max-1200 {
+    .hero-mobile {
+      left: 7%;
+    }
+    .download-parent {
+      width: 100%;
+    }
+    .hero-mobile {
+      width: 390px;
+    }
+    .banner-desc {
+      width: 450px;
+    }
+  }
+  @include max-992 {
+
+    .banner-desc {
+      width: 365px;
+    }
+    .hero-mobile {
+      width: 330px;
+    }
+  }
+  @include max-768 {
+    
+    .hero-mobile {
+      left: 50%;
+      width: 270px;
+    }
+    .about .item{
+      width : calc(50% - 10px) ;
+    }
+    .download-parent .content .head {
+      line-height: 1.1;
+    }
+    .download-parent .content {
+      width: 100%;
+    }
+    .banner-desc {
+      width: 100%;
+    }
+    .about .para {
+      line-height: 1.5;
+    }
+    .about .item .title {
+      line-height: 1.4;
+    }
+    .features-cont {
+      width: 100%;
+    }
+    .ques-answer {
+      line-height: 1.6;
+    }
+    .client-reviews .general-title,
+    .faq .general-title {
+      line-height: 1.3;
+    }
+    .download-parent .content .para,
+    .footer-content .copyright {
+      line-height: 1.4;
+    }
+    .form-div .text {
+      line-height: 1.3;
+    }
+  }
+  .client-reviews .item .icon {
+    transform: scaleX(-1);
+  }
+}

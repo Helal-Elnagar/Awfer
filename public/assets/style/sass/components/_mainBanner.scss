@@ -1,0 +1,229 @@
+.mainBanner {
+  height: 100vh;
+  overflow: hidden;
+  .container {
+    height: 100%;
+    position: relative;
+  }
+}
+
+.hero-mobile {
+  position: absolute;
+  width: 575px;
+  left: 16%;
+  top: 50%;
+  margin-top: -314px;
+}
+.mainBanner-parent {
+  background-image: url(../images/heroo-bg.jpg);
+  background-position: center ;
+  background-size: cover;
+  height: 100%;
+  position: relative;
+}
+
+.banner-desc {
+  width: 560px;
+  text-align: center;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  .main-title {
+    font-size: 36px;
+    text-transform: capitalize;
+    line-height: 50px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: 700;
+    text-align: start;
+  }
+  .second-title {
+    font-size: 28px;
+    line-height: 40px;
+    color: #fff;
+    font-weight: 400;
+    text-align: start;
+    margin: 0;
+  }
+  .download-links {
+    justify-content: flex-start;
+    a {
+      transition: background-color ease-in-out 0.2s;
+    }
+    a:hover {
+      background-color: $main-hover;
+    }
+  }
+}
+
+// scroll animated
+
+.scroll-btn {
+  position: absolute;
+  display: flex;
+  z-index: 4;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  justify-content: center;
+  bottom: 45px;
+  text-align: center;
+  span {
+    width: 24px;
+    height: 45px;
+    border-radius: 12px;
+    background-color: rgba(2, 119, 250, 0);
+    border: 2px solid #fff;
+    position: relative;
+    display: inline-block;
+    transition: all ease 0.3s;
+  }
+}
+
+.scroll-btn span::after {
+  content: "";
+  width: 2px;
+  height: 10px;
+  background-color: #fff;
+  top: 6px;
+  opacity: 0;
+  left: 48%;
+  z-index: 3;
+  position: absolute;
+  transform: translateX(-48%);
+  animation-name: scroll;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .hero-mobile {
+    width: 500px;
+    margin-top: -240px;
+    left: 14%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .hero-mobile {
+    width: 500px;
+    margin-top: -250px;
+  }
+}
+
+@include max-1200 {
+  .hero-mobile {
+    width: 420px;
+    inset-inline-end: 5%;
+    margin-top: -220px;
+  }
+  .banner-desc {
+    width: 500px;
+  }
+}
+
+@include max-992 {
+  .banner-desc {
+    width: 375px;
+    inset-inline-end: 0;
+  }
+  .hero-mobile {
+    width: 350px;
+    left: 5%;
+    margin-top: -175px;
+  }
+}
+
+@include max-768 {
+  .mainBanner .container {
+    overflow: auto;
+  }
+  .banner-desc .download-links {
+    width: 100%;
+    justify-content: center;
+  }
+  .banner-desc .download-links a {
+    width: 100%;
+    max-width: 185px;
+  }
+  .hero-mobile {
+    bottom: 10px;
+    inset-inline-end: unset;
+    left: 50%;
+    margin-left: -135px;
+    width: 270px;
+    margin-top: unset;
+    top: unset;
+  }
+  .scroll-btn span {
+    border-color: #000;
+    &::after {
+      background-color: #000;
+    }
+  }
+
+  .scroll-btn {
+    bottom: 54px;
+  }
+  .banner-desc {
+    position: static;
+    inset-inline-start: unset;
+    transform: unset;
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: none;
+  }
+  .download-links {
+    margin-top: 25px;
+  }
+
+  .banner-desc .main-title {
+    font-size: 27px;
+    text-align: center;
+    width: 100%;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .banner-desc .second-title {
+    font-size: 20px;
+    line-height: 1.45;
+    text-align: center;
+  }
+  .banner-desc .download-links a .google,
+  .banner-desc .download-links a .apple {
+    height: 26px;
+    width: auto;
+  }
+  .download-links a {
+    height: 52px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .hero-mobile {
+    width: 230px;
+    margin-left: -120px;
+  }
+  .banner-desc .main-title {
+    font-size: 22px;
+  }
+  .banner-desc .second-title {
+    font-size: 17px;
+  }
+}

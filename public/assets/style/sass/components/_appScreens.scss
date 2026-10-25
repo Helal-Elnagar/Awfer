@@ -1,0 +1,103 @@
+.app-screens {
+  padding-top: 140px;
+  padding-bottom: 120px;
+  .title-text {
+    font-size: 30px;
+    color: #000;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 55px;
+    text-transform: capitalize;
+  }
+  .mySwiper-parent {
+    .frame {
+      z-index: 8;
+      width: 17.55%;
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+  .swiper-slide-active .screenShot {
+    overflow: hidden;
+    border-radius: 20px;
+  }
+}
+.screenShot {
+  width: 100%;
+  img {
+    width: 100%;
+    transition: opacity 0.2s ease-in-out;
+  }
+}
+
+.app-screens {
+  .swiper-slide {
+    cursor: pointer;
+    .screenShot img {
+      opacity: 0.302;
+    }
+  }
+  .swiper-slide-active {
+    .screenShot img {
+      opacity: 1;
+    }
+  }
+  .swiper-pagination {
+    bottom: -70px;
+  }
+  .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #000000;
+    opacity: 0.302;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: $main-color;
+    opacity: 1;
+  }
+}
+
+@include max-1200 {
+  .app-screens .mySwiper-parent .frame {
+    width: 22%;
+  }
+}
+
+@include max-992 {
+  .app-screens .mySwiper-parent .frame {
+    width: 27%;
+    height: 105%;
+    img {
+      height: 100%;
+    }
+  }
+}
+
+@include max-768 {
+  .app-screens .mySwiper-parent .frame {
+    width: 52.5%;
+    height: 104%;
+    top: -9px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .app-screens .title-text {
+    font-size: 22px;
+    margin-bottom: 50px;
+  }
+  .app-screens {
+    padding-top: 70px;
+    padding-bottom: 100px;
+  }
+  .app-screens .swiper-pagination {
+    bottom: -50px;
+  }
+}
