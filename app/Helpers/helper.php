@@ -42,7 +42,11 @@ function Translate($text,$lang){
         return is_string($text) ? $text : '';
     }
 
-    $api  = '***REMOVED***';
+    $api = config('services.yandex.translate_key');
+
+    if (empty($api)) {
+        return $text;
+    }
 
     try {
         $endpoint = 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=' . $api

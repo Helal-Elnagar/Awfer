@@ -31,7 +31,7 @@ return [
     ],
 
      'myfatoorah' => [
-        'token' => env('MYFATOORAH_API_KEY', env('MYFATOORAH_TOKEN', '***REMOVED***')),
+        'token' => env('MYFATOORAH_API_KEY', env('MYFATOORAH_TOKEN')),
         'test_mode' => env('MYFATOORAH_TEST_MODE', true),
         'country_iso' => 'SAU',
         'currency_iso' => 'SAR',
@@ -45,5 +45,10 @@ return [
         'sender_id' => env('FIREBASE_SENDER_ID'),
         'project_id' => env('FIREBASE_PROJECT_ID'),
         'api_key' => env('FIREBASE_API_KEY'),
+        'service_account_path' => env('FIREBASE_SERVICE_ACCOUNT_PATH', storage_path('app/firebase-service-account.json')),
+    ],
+
+    'yandex' => [
+        'translate_key' => env('YANDEX_TRANSLATE_API_KEY'),
     ],
 ];

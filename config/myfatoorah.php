@@ -11,11 +11,11 @@ return [
     */
 
     // API Configuration
-'api_key' => env('MYFATOORAH_API_KEY', '***REMOVED***'),
+'api_key' => env('MYFATOORAH_API_KEY'),
 
     'test_mode' => env('MYFATOORAH_TEST_MODE', true),
 
-    'webhook_secret' => env('MYFATOORAH_WEBHOOK_SECRET', '***REMOVED***=='),
+    'webhook_secret' => env('MYFATOORAH_WEBHOOK_SECRET'),
 
     // Default Settings
     'currency' => env('MYFATOORAH_CURRENCY', 'SAR'),

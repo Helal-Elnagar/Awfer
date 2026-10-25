@@ -24,13 +24,6 @@ class MyFatoorahService
             throw new Exception('MyFatoorah API token is not configured. Please set MYFATOORAH_API_KEY in .env file');
         }
 
-        // Check if using the default/fallback token (which is likely expired)
-        $defaultToken = '***REMOVED***';
-
-        if ($this->apiToken === $defaultToken) {
-            Log::warning('MyFatoorah: Using default/fallback API token which may be expired or invalid. Please set MYFATOORAH_API_KEY in .env file with your actual API token.');
-        }
-
         $region = config('myfatoorah.region', 'SAU');
         if ($this->testMode) {
             $this->baseUrl = 'https://apitest.myfatoorah.com';
